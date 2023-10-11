@@ -20,4 +20,23 @@ export { APINo200 }
 // format(parseTime(item.create_time), 'yyyy-MM-dd HH:mm:ss')
 
 
-/**/
+/*3.dom中如果文字超出省略展示title*/
+let list = []
+const domSetTitle = () => {
+  let divs: any = []
+  list?.forEach((item: any, index: number) => {
+    let divDom = document.querySelector(`.tableleft${index}`) as HTMLElement
+    if (divDom.scrollWidth > divDom.clientWidth) {
+      divDom.title = divDom.innerText; // 或者使用textContent代替innerText
+    }
+  })
+}
+/* 搭配的html
+* {
+    this.list.map((item: any, index: number) => {
+      return (
+        <div class={tableleft${index}}></div>
+      )
+    })
+   }
+* */
