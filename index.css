@@ -7,3 +7,10 @@
      border-radius: 5px;
      width: 7px;
  }
+
+/*2.文字超出隐藏*/
+div {
+    overflow:hidden;
+    white-space:nowrap;
+    text-overflow: ellipsis;
+}
