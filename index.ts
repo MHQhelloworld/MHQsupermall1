@@ -40,3 +40,14 @@ const domSetTitle = () => {
     })
    }
 * */
+
+/*4.路由守卫*/
+/*
+setup() {
+  return {
+  }
+},
+// beforeRouteEnter路由守卫
+beforeRouteEnter(to, from, next) {
+  next()
+}*/
