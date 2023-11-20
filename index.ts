@@ -51,3 +51,51 @@ setup() {
 beforeRouteEnter(to, from, next) {
   next()
 }*/
+
+/*5.设置双位数*/
+const getTwoNum = (num: any) => {
+  if (num < 10) {
+    return '0' + num
+  }
+  return '' + num
+}
+
+/*6.获取当天00:00:00*/
+const getTodayStr = () => {
+  const year = new Date().getFullYear()
+  const month = new Date().getMonth() + 1
+  const day = new Date().getDate()
+
+  // "YYYY-MM-DD 00:00:00"
+  return year + '-' + getTwoNum(month) + '-' + getTwoNum(day) + ' ' + '00:00:00'
+}
+
+/*7.获取第二天00:00:00*/
+const getTomorrowStr = () => {
+  let year = new Date().getFullYear()
+  let month = new Date().getMonth() + 1
+  let day = new Date().getDate()
+  // 当年2月份的天数
+  const date = new Date(2022, 2)
+  date.setDate(0)
+  const FebraryDates = date.getDate()
+  const day31 = [1, 3, 5, 7, 8, 10, 12]
+  const day30 = [4, 6, 9, 11]
+  if (month < 12) {
+    if (day31.indexOf(month) !== -1 && day === 31 || day30.indexOf(month) !== -1 && day === 30 || month === 2 && day === FebraryDates) {
+      month += 1
+      day = 1
+    } else {
+      day += 1
+    }
+  }
+  if (month === 12) {
+    if (day31.indexOf(month) !== -1 && day === 31 || day30.indexOf(month) !== -1 && day === 30) {
+      year += 1
+      month = 1
+      day = 1
+    }
+  }
+  // "YYYY-MM-DD 00:00:00"
+  return year + '-' + getTwoNum(month) + '-' + getTwoNum(day) + ' ' + '00:00:00'
+}
