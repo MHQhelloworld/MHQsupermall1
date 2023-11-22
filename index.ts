@@ -107,15 +107,15 @@ const userStore = useUserStore()
 (userStore.getUserInfo as UserInfoRes).id
 */
 
-/*9.空置转换自定义值*/
-// item 待转换值
-// returnData 空置时转换的自定义值
-/*
-* 例
-* let a = null
-* emptyDataChange(a, '123')
-* 结果 a === 123
-* */
+/**
+ * 9.空置转换自定义值
+ * @param item 待转换值
+ * @param returnData 空置时转换的自定义值
+ * @example
+ * let a = null
+ * emptyDataChange(a, '123')
+ * 结果 a === 123
+ */
 const emptyDataChange = (item: any, returnData: any) => {
   if (item === '' || item === null || item === undefined) {
     return returnData
