@@ -99,3 +99,10 @@ const getTomorrowStr = () => {
   // "YYYY-MM-DD 00:00:00"
   return year + '-' + getTwoNum(month) + '-' + getTwoNum(day) + ' ' + '00:00:00'
 }
+
+/*8.获取user_id*/
+/*
+import {useUserStore} from "@/store/user/user";
+const userStore = useUserStore()
+(userStore.getUserInfo as UserInfoRes).id
+*/
