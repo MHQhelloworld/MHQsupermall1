@@ -123,3 +123,7 @@ const emptyDataChange = (item: any, returnData: any) => {
     return item
   }
 }
+
+/*10.vue3 watch深度监听*/
+// watch(监听的数据, 副作用函数, 配置对象)
+// watch(() => obj, (newVal: any, oldVal: any) => {}, {immediate: true, deep: true})

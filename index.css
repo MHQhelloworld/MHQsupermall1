@@ -3,10 +3,10 @@
     width: 7px;
 }
 ::-webkit-scrollbar-thumb {
-     background-color: #c0c0c0;
-     border-radius: 5px;
-     width: 7px;
- }
+    background-color: #c0c0c0;
+    border-radius: 5px;
+    width: 7px;
+}
 
 /*2.文字超出隐藏*/
 div {
@@ -35,3 +35,8 @@ div {
     wait	    指示程序正忙（通常是一只表或沙漏）。
     help	    指示可用的帮助（通常是一个问号或一个气球）。
 */
+
+/*4.textarea禁止拉伸*/
+textarea {
+    resize:none
+}
