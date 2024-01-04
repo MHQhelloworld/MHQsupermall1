@@ -2,13 +2,13 @@
 // @ts-ignore
 import {defineComponent, watch} from 'vue'
 
-const comps = defineComponent({
-  name: 'comps',
+const props = {}
+const index = defineComponent({
+  name: 'index',
   props: [''],
-  setup(props: any, context: any) {
-    watch(() => props.logRecord, (newValue: any) => {
-      // 监听父组件数据改变后操作
-    })
+  setup(props: any, cxt: any) {
+    watch(() => props, (newVal: any, oldVal: any) => {
+    }, {immediate: true, deep: true})
 
     return {
     }
@@ -29,4 +29,4 @@ const comps = defineComponent({
   }
 })
 
-export default comps
+export default index

@@ -1,0 +1,59 @@
+<a-table
+    dataSource={this.variables.dataSource}
+    columns={this.variables.columns}
+    pagination={false}
+    loading={this.variables.loading}
+    v-slots={{
+        bodyCell: ({text, record, index, column}: any) => {
+            if (column.key === 'n1') {
+                return (
+
+                )
+            }
+            if (column.key === 'action') {
+                return (
+                    <div>
+                        <a style="margin-right: 20px;"></a>
+                    </div>
+                )
+            }
+        }
+    }}
+/>
+
+dataSource: [
+    {
+        n1: '', // #326DFF
+        n2: '',
+        n3: '',
+        n4: '',
+    },
+],
+columns: [
+    {
+        title: '',
+        dataIndex: 'n1',
+        key: 'n1',
+    },
+    {
+        title: '',
+        dataIndex: 'n2',
+        key: 'n2',
+    },
+    {
+        title: '',
+        dataIndex: 'n3',
+        key: 'n3',
+    },
+    {
+        title: '',
+        dataIndex: 'n4',
+        key: 'n4',
+    },
+    {
+        title: '操作',
+        key: 'action',
+        width: 350
+    },
+],
+loading: false

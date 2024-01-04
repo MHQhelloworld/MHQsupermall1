@@ -1,0 +1,18 @@
+<div style="margin-top: 24px; display: flex; justify-content: end">
+    <a-pagination v-model:current={this.variables.current} v-model:page-size={this.variables.pageSize}
+      total={this.variables.total} show-size-changer show-quick-jumper
+      onChange={this.PageChange}
+      show-total={(total: any, range: any) => {
+          return <span style="color: rgba(0, 0, 0, .45)">第{range[0]}-{range[1]}条 / 共{this.variables.total}条</span>
+      }}
+    />
+</div>
+
+current: 1,
+pageSize: 10,
+total: 0,
+
+const PageChange = (current: number, pageSize: number) => {
+    variables.current = current
+    variables.pageSize = pageSize
+}
