@@ -128,4 +128,22 @@ const emptyDataChange = (item: any, returnData: any) => {
 // watch(监听的数据, 副作用函数, 配置对象)
 // watch(() => obj, (newVal: any, oldVal: any) => {}, {immediate: true, deep: true})
 
+/*11.下载*/
+const downloadFn = (xlsxData: any, name: any) => {
+  // 将 XLSX 数据转化为 Blob 对象
+  // const blob = new Blob([xlsxData], { type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' });
+  const blob = new Blob([xlsxData], { type: 'application/pdf' });
+
+  // 创建下载链接
+  const downloadLink = document.createElement('a');
+  downloadLink.href = URL.createObjectURL(blob);
+  downloadLink.download = `${name}`; // 下载文件名
+
+  // 点击下载链接触发下载
+  downloadLink.click();
+
+  // 清理创建的临时对象
+  URL.revokeObjectURL(downloadLink.href);
+}
+
 

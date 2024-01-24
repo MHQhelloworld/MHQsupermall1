@@ -7,7 +7,7 @@ const index = defineComponent({
   name: 'index',
   props: [''],
   setup(props: any, cxt: any) {
-    watch(() => props, (newVal: any, oldVal: any) => {
+    watch(() => props, (value: any) => {
     }, {immediate: true, deep: true})
 
     return {

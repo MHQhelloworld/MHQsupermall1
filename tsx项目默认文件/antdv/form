@@ -1,0 +1,23 @@
+<a-form ref="formRef" model={this.formState} name="basic" autocomplete="off" layout="vertical" rules={this.rules}>
+
+</a-form>
+
+interface FormState {}
+
+const formState = reactive<FormState>({});
+const formRef = ref<FormInstance>();
+const nameRul = async(_rule: Rule, value: number) => {
+    if (!value) {
+        return Promise.reject('请输入方案名称');
+    }
+}
+const rules: Record<string, Rule[]> = {
+    name: [{ required: true, validator: nameRul, trigger: 'change' }],
+};
+const CheckForm = async () => {
+    try {
+        const values = await formRef.value?.validateFields()
+    } catch (errorInfo) {
+        console.log(errorInfo)
+    }
+}

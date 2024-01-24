@@ -40,3 +40,11 @@ div {
 textarea {
     resize:none
 }
+/*
+display: flex; justify-content: end; align-items: center;
+display: flex; justify-content: space-between; align-items: center;
+display: flex; justify-content: center; align-items: center;
+display: flex; justify-content: end;
+display: flex; align-items: center;
+ */
+
