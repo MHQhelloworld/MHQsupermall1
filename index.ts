@@ -146,4 +146,16 @@ const downloadFn = (xlsxData: any, name: any) => {
   URL.revokeObjectURL(downloadLink.href);
 }
 
+/*12.剔除数组中重复的元素*/
+const deleteSameArr = (returnArr, sameArr) => {
+  for (let i1 = 0, len1 = returnArr.length; i1 < len1; i1++) {
+    for (let i2 = 0, len2 = sameArr.length; i2 < len2; i2++) {
+      if (returnArr[i1] === sameArr[i2]) {
+        returnArr.splice(i1, 1)
+        i1--
+      }
+    }
+  }
+}
+
 
