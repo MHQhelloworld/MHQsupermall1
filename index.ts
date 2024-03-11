@@ -158,4 +158,48 @@ const deleteSameArr = (returnArr, sameArr) => {
   }
 }
 
+/*13.生成二维码*/
+/*import QRCode from 'qrcode';
+QRCode.toDataURL(
+  'https://www.baidu.com/',{
+    // color: {
+    //   dark:"#010599FF",
+    //   light:"#FFBF60FF"
+    // }
+  }
+).then((url:any) => {
+  // 获取到url后即可在页面使用--二维码图片
+  console.log('url', url)
+  data.decodedImageData = url
+}).catch((e:any) => {
+    console.log('e', e)
+  })*/
+/*<div>
+  <img src={this.data.decodedImageData} />
+</div>*/
+
+/*14.数值判断是否从MB0转换成GB (四舍五入, 保留两位小数)*/
+const MB_TO_GB = (v) => {
+  let num = +v
+  if (num < 1024) {
+    if (num.toString().indexOf('.') !== -1) {
+      let n1 = num.toString().split(".")[1].length
+      if (n1 > 2) {
+        return +num.toFixed(2) + 'MB'
+      }
+    }
+    return num + 'MB'
+  } else {
+    let n2 = (num / 1024).toString()
+    if (n2.indexOf('.') !== -1) {
+      if (n2.split(".")[1].length > 2) {
+        return (num / 1024).toFixed(2) + 'GB'
+      }
+    }
+    return (num / 1024) + 'GB'
+  }
+}
+
+
+
 
