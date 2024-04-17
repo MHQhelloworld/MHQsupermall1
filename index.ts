@@ -200,6 +200,24 @@ const MB_TO_GB = (v) => {
   }
 }
 
+/*15.js复制*/
+const copyLink = (link) => {
+  navigator.clipboard.writeText(link)
+    .then(function() {
+      console.error('已复制到剪贴板');
+    })
+    .catch(function(error) {
+      console.error('Failed to copy link: ', error);
+    });
+}
+/*使用示例：copyLink('https://example.com')
+请注意，使用 navigator.clipboard.writeText() 方法需要用户授权，只能在用户交互（例如点击按钮）后调用。这可以提高安全性，避免恶意网站滥用剪贴板功能。*/
+
+
+/*16.null校验*/
+const isNullOrNot = (v, r) => {
+  return v === null ? null : r
+}
 
 
 
